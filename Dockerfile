@@ -1,4 +1,4 @@
-FROM public.ecr.aws/t2u7r5j5/alpine
+FROM public.ecr.aws/t2u7r5j5/alpine:alpine
 CMD ["echo", "Hello StackOverflow!"]
 
 
