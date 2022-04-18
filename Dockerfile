@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM public.ecr.aws/t2u7r5j5/alpine
 CMD ["echo", "Hello StackOverflow!"]
 
 
