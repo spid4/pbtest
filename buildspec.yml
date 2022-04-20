@@ -10,11 +10,11 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - sudo chmod 666 /var/run/docker.sock
-      - docker build -t my-first-ecr-repo .
-      - docker tag my-first-ecr-repo:latest 225842243320.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr-repo:latest
+      - docker build -t test-repo .
+      - docker tag test-repo:latest 225842243320.dkr.ecr.us-east-1.amazonaws.com/test-repo:latest
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 225842243320.dkr.ecr.us-east-1.amazonaws.com/my-first-ecr-repo:latest
+      - docker push 225842243320.dkr.ecr.us-east-1.amazonaws.com/test-repo:latest
   post_build:
     commands:
-      - aws lambda update-function-code --region us-east-1 --function-name my-function3 --image-uri 225842243320.dkr.ecr.us-east-1.amazonaws.c        om/my-first-ecr-repo:latest
+      - aws lambda update-function-code --region us-east-1 --function-name my-function3 --image-uri 225842243320.dkr.ecr.us-east-1.amazonaws.c        om/test-repo:latest
