@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 225842243320.dkr.ecr.us-east-1.amazonaws.        com
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 225842243320.dkr.ecr.us-east-1.amazonaws. com
   build:
     commands:
       - echo Build started on `date`
@@ -17,4 +17,4 @@ phases:
       - docker push 225842243320.dkr.ecr.us-east-1.amazonaws.com/test-repo:latest
   post_build:
     commands:
-      - aws lambda update-function-code --region us-east-1 --function-name my-function3 --image-uri 225842243320.dkr.ecr.us-east-1.amazonaws.c        om/test-repo:latest
+      - aws lambda update-function-code --region us-east-1 --function-name my-function3 --image-uri 225842243320.dkr.ecr.us-east-1.amazonaws.c om/test-repo:latest
